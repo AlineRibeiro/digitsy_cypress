@@ -1,12 +1,13 @@
 import 'cypress-file-upload';
+import  locators from '../support/locators';
 
 describe('Should test at functional level', () => {
   before(() => {
     cy.visit('http://localhost:3001/session/new');
-    cy.get(':nth-child(1) > .ui > input').type('aline@email.com');
-    cy.get(':nth-child(2) > .ui > input').type('supersecret');
-    cy.get('.stacked > .teal').click();
-    cy.get('.current-user').should('contain', 'Hello, Aline!')
+    cy.get(locators.LOGIN.USER).type('aline@email.com');
+    cy.get(locators.LOGIN.PASSWORD).type('supersecret');
+    cy.get(locators.LOGIN.BUTTON).click();
+    cy.get(locators.GREETING.CURRENT_USER).should('contain', 'Hello, Aline!')
   });
 
   it ('Should insert a product', () => {
@@ -20,10 +21,4 @@ describe('Should test at functional level', () => {
     cy.get(':nth-child(9) > .ui').click();
     // cy.url().should('be', 'http://localhost:3001/products'); falta um wait aqui. algo assim
   });
-
-  // it.only()
-
-
 });
-
-
