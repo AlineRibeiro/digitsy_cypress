@@ -26,12 +26,10 @@
 
 import locators from "./locators";
 
-Cypress.Commands.add('login', (username, password, greeting) => {
+Cypress.Commands.add("login", (username, password, greeting) => {
   cy.visit("http://localhost:3001/session/new");
   cy.get(locators.login.user).type(username);
   cy.get(locators.login.password).type(password);
   cy.get(locators.login.btn_login).click();
   cy.get(locators.menu.current_user).should("contain", greeting);
 });
-
-
