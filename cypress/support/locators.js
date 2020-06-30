@@ -16,6 +16,7 @@ const locators = {
     sample_media: 'input[name="sample_media"]',
     media: 'input[name="media"]',
     btn_create: ":nth-child(9) > .ui",
+    nameError: ":nth-child(1) > p",
   },
 };
 
