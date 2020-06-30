@@ -3,11 +3,7 @@ import locators from "../support/locators";
 
 describe("Should test at functional level", () => {
   before(() => {
-    cy.visit("http://localhost:3001/session/new");
-    cy.get(locators.login.user).type("aline@email.com");
-    cy.get(locators.login.password).type("supersecret");
-    cy.get(locators.login.btn_login).click();
-    cy.get(locators.menu.current_user).should("contain", "Hello, Aline!");
+    cy.login("aline@email.com", "supersecret", "Hello, Aline!")
   });
 
   it("Should insert a product", () => {
