@@ -18,6 +18,7 @@ describe('Should test at functional level', () => {
     cy.get('input[name="sample_media"]').attachFile({filePath: '../fixtures/bootcamp_sample.pdf', encoding: 'base64'});
     cy.get('input[name="media"]').attachFile({filePath: '../fixtures/bootcamp_product.pdf', encoding: 'base64'});
     cy.get(':nth-child(9) > .ui').click();
+    // cy.url().should('be', 'http://localhost:3001/products'); falta um wait aqui. algo assim
   });
 
   // it.only()
