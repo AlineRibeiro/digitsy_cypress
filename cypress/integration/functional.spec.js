@@ -22,9 +22,9 @@ describe("Should test at functional level", () => {
 
   it("should not create a product with the same name ", () => {
     cy.accessSellProductMenu();
-    cy.get(locators.createProducts.name).clear().type(
-      "Bootcamp Life - 10 survival tips"
-    );
+    cy.get(locators.createProducts.name)
+      .clear()
+      .type("Bootcamp Life - 10 survival tips");
     cy.get(locators.createProducts.btnCreate).click();
     cy.get(locators.createProducts.nameError).should(
       "contain",
