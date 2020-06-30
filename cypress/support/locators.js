@@ -1,22 +1,22 @@
 const locators = {
-  LOGIN: {
-    USER: ":nth-child(1) > .ui > input",
-    PASSWORD: ":nth-child(2) > .ui > input",
-    BTN_LOGIN: ".stacked > .teal",
+  login: {
+    user: ":nth-child(1) > .ui > input",
+    password: ":nth-child(2) > .ui > input",
+    btn_login: ".stacked > .teal",
   },
-  MENU: {
-    CURRENT_USER: ".current-user",
-    SELL_PRODUCT: ".right > .my-menu",
+  menu: {
+    current_user: ".current-user",
+    sell_product: ".right > .my-menu",
   },
-  CREATE_PRODUCTS: {
-    NAME: ":nth-child(1) > .ui > input",
-    PRICE: ":nth-child(2) > .ui > input",
-    DESCRIPTION: "textarea",
-    THUMBNAIL: 'input[name="thumbnail"]',
-    SAMPLE_MEDIA: 'input[name="sample_media"]',
-    MEDIA: 'input[name="media"]',
-    BTN_CREATE: ":nth-child(9) > .ui",
-  }
+  create_products: {
+    name: ":nth-child(1) > .ui > input",
+    price: ":nth-child(2) > .ui > input",
+    description: "textarea",
+    thumbnail: 'input[name="thumbnail"]',
+    sample_media: 'input[name="sample_media"]',
+    media: 'input[name="media"]',
+    btn_create: ":nth-child(9) > .ui",
+  },
 };
 
 export default locators;
