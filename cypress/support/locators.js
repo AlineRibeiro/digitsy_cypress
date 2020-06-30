@@ -2,20 +2,20 @@ const locators = {
   login: {
     user: ":nth-child(1) > .ui > input",
     password: ":nth-child(2) > .ui > input",
-    btn_login: ".stacked > .teal",
+    btnLogin: ".stacked > .teal",
   },
   menu: {
-    current_user: ".current-user",
-    sell_product: ".right > .my-menu",
+    currentUser: ".current-user",
+    sellProduct: ".right > .my-menu",
   },
-  create_products: {
+  createProducts: {
     name: ":nth-child(1) > .ui > input",
     price: ":nth-child(2) > .ui > input",
     description: "textarea",
     thumbnail: 'input[name="thumbnail"]',
-    sample_media: 'input[name="sample_media"]',
+    sampleMedia: 'input[name="sample_media"]',
     media: 'input[name="media"]',
-    btn_create: ":nth-child(9) > .ui",
+    btnCreate: ":nth-child(9) > .ui",
     nameError: ":nth-child(1) > p",
   },
 };

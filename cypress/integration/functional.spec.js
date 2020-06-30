@@ -17,18 +17,16 @@ describe("Should test at functional level", () => {
       "../fixtures/bootcamp_sample.pdf",
       "base64",
       "../fixtures/bootcamp_product.pdf"
-      // cy.url().should('be', 'http://localhost:3001/products');
-      // maybe add a wait or something like this
     );
   });
 
-  it.only("should not create a product with the same name ", () => {
+  it("should not create a product with the same name ", () => {
     cy.accessSellProductMenu();
-    cy.get(locators.create_products.name).type(
+    cy.get(locators.createProducts.name).clear().type(
       "Bootcamp Life - 10 survival tips"
     );
-    cy.get(locators.create_products.btn_create).click();
-    cy.get(locators.create_products.nameError).should(
+    cy.get(locators.createProducts.btnCreate).click();
+    cy.get(locators.createProducts.nameError).should(
       "contain",
       "Name has already been taken"
     );
