@@ -18,6 +18,9 @@ const locators = {
     btnCreate: ":nth-child(9) > .ui",
     nameError: ":nth-child(1) > p",
   },
+  productIndex: {
+    mostRecent: '.container > :nth-child(4) > :nth-child(1) > :nth-child(1)'
+  }
 };
 
 export default locators;
