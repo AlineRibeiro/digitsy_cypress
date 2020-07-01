@@ -3,12 +3,13 @@ import "../support/commandsProduct";
 import locators from "../support/locators";
 
 describe("Should test at functional level", () => {
-  before(() => {
+  beforeEach(() => {
     cy.login("aline@email.com", "supersecret", "Hello, Aline!");
   });
 
+  const uniqueProductName =  `Cypress test product ${Math.random()}`;
+
   it("Should insert a product", () => {
-    const uniqueProductName =  `Cypress test product ${Math.random()}`;
     cy.accessSellProductMenu();
     cy.createProduct(
       uniqueProductName,
@@ -24,7 +25,7 @@ describe("Should test at functional level", () => {
   it("should not create a product with the same name ", () => {
     cy.accessSellProductMenu();
     cy.get(locators.createProducts.name)
-      .type("Bootcamp Life - 10 survival tips");
+      .type(uniqueProductName);
     cy.get(locators.createProducts.btnCreate).click();
     cy.get(locators.createProducts.nameError).should(
       "contain",
