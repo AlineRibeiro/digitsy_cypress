@@ -34,6 +34,6 @@ const locators = {
 };
 //para topShoppingCart e secondShopingCart, eu poderia criar um shoppingCart key que retornaria uma
 //arrow function passando o xpath generico para um produto qq, e o nome do produto como argumento
-//da funcao, assim como o prof fez no video 59 Saldo.
+//da funcao, assim como o prof fez no video 59 Saldo e 60 Remover Movimentacao
 
 export default locators;
