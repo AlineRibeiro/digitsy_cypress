@@ -9,7 +9,7 @@ describe("Should test at functional level", () => {
 
   const uniqueProductName =  `Cypress test product ${Math.random()}`;
 
-  it("Should insert a product", () => {
+  it("should insert a product", () => {
     cy.accessSellProductMenu();
     cy.createProduct(
       uniqueProductName,
@@ -32,4 +32,16 @@ describe("Should test at functional level", () => {
       "Name has already been taken"
     );
   });
+
+  it.only("should get total", () => {
+    cy.get(locators.productIndex.topShoppingCart).click();
+    cy.get('[href="/products"]').click();
+    cy.get(locators.productIndex.secondShoppingCart).click();
+    cy.get('.container > :nth-child(3)').should(
+      "contain",
+      "Total Price: $40.00"
+    );
+    cy.get('.positive').click();
+  });
+
 });

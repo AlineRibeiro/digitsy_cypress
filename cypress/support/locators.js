@@ -19,8 +19,13 @@ const locators = {
     nameError: ":nth-child(1) > p",
   },
   productIndex: {
-    mostRecent: '.container > :nth-child(4) > :nth-child(1) > :nth-child(1)'
+    mostRecent: '.container > :nth-child(4) > :nth-child(1) > :nth-child(1)',
+    topShoppingCart: ':nth-child(1) > #product-card > .extra > .two > .row > .right > .ui',
+    secondShoppingCart: ':nth-child(2) > #product-card > .extra > .two > .row > .right > .ui',
   }
 };
+//para topShoppingCart e secondShopingCart, eu poderia criar um shoppingCart key que retornaria uma
+//arrow function passando o xpath generico para um produto qq, e o nome do produto como argumento
+//da funcao, assim como o prof fez no video 59 Saldo.
 
 export default locators;
