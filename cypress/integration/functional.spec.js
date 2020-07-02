@@ -35,13 +35,13 @@ describe("Should test at functional level", () => {
 
   it.only("should get total", () => {
     cy.get(locators.productIndex.topShoppingCart).click();
-    cy.get('[href="/products"]').click();
+    cy.accessBrowseProducts();
     cy.get(locators.productIndex.secondShoppingCart).click();
     cy.get('.container > :nth-child(3)').should(
       "contain",
       "Total Price: $40.00"
     );
-    cy.get('.positive').click();
+    cy.checkOut();
   });
 
 });

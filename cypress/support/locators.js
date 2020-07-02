@@ -7,6 +7,7 @@ const locators = {
   menu: {
     currentUser: ".current-user",
     sellProduct: ".right > .my-menu",
+    browseProducts: '[href="/products"]'
   },
   createProducts: {
     name: ":nth-child(1) > .ui > input",
@@ -21,7 +22,10 @@ const locators = {
   productIndex: {
     mostRecent: '.container > :nth-child(4) > :nth-child(1) > :nth-child(1)',
     topShoppingCart: ':nth-child(1) > #product-card > .extra > .two > .row > .right > .ui',
-    secondShoppingCart: ':nth-child(2) > #product-card > .extra > .two > .row > .right > .ui',
+    secondShoppingCart: ':nth-child(2) > #product-card > .extra > .two > .row > .right > .ui'
+  },
+  shoppingCart: {
+    checkout: '.positive'
   }
 };
 //para topShoppingCart e secondShopingCart, eu poderia criar um shoppingCart key que retornaria uma

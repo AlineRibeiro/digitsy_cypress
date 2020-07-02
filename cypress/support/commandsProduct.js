@@ -4,6 +4,14 @@ Cypress.Commands.add("accessSellProductMenu", () => {
   cy.get(locators.menu.sellProduct).click();
 });
 
+Cypress.Commands.add("accessBrowseProducts", () => {
+  cy.get(locators.menu.browseProducts).click();
+});
+
+Cypress.Commands.add("checkOut", () => {
+  cy.get(locators.shoppingCart.checkout).click();
+});
+
 Cypress.Commands.add(
   "createProduct",
   (name, price, description, thumbnail, sampleMedia, encoding, media) => {
