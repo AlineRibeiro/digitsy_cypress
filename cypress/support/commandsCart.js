@@ -8,7 +8,9 @@ Cypress.Commands.add("removeCartItem", () => {
   cy.get(locators.shoppingCart.removeItemBtn).click();
 });
 
-Cypress.Commands.add("checkTotalPrice", totalPrice => {
-  cy.get('.container > :nth-child(3)').should("contain", `Total Price: $${totalPrice}` );
+Cypress.Commands.add("checkTotalPrice", (totalPrice) => {
+  cy.get(locators.shoppingCart.totalPrice).should(
+    "contain",
+    `Total Price: $${totalPrice}`
+  );
 });
-

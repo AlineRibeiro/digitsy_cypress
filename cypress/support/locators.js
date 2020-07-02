@@ -29,6 +29,7 @@ const locators = {
   shoppingCart: {
     checkout: ".positive",
     removeItemBtn: ":nth-child(1) > :nth-child(2) > .extra > .ui",
+    totalPrice: ".container > :nth-child(3)",
   },
 };
 //para topShoppingCart e secondShopingCart, eu poderia criar um shoppingCart key que retornaria uma

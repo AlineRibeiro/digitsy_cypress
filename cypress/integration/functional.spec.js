@@ -1,6 +1,6 @@
 import "cypress-file-upload";
 import "../support/commandsProduct";
-import "../support/commandsCart"
+import "../support/commandsCart";
 import locators from "../support/locators";
 
 describe("Should test at functional level", () => {
@@ -8,7 +8,7 @@ describe("Should test at functional level", () => {
     cy.login("aline@email.com", "supersecret", "Hello, Aline!");
   });
 
-  const uniqueProductName =  `Cypress test product ${Math.random()}`;
+  const uniqueProductName = `Cypress test product ${Math.random()}`;
 
   it("should insert a product", () => {
     cy.accessSellProductMenu();
@@ -25,8 +25,7 @@ describe("Should test at functional level", () => {
 
   it("should not create a product with the same name ", () => {
     cy.accessSellProductMenu();
-    cy.get(locators.createProducts.name)
-      .type(uniqueProductName);
+    cy.get(locators.createProducts.name).type(uniqueProductName);
     cy.get(locators.createProducts.btnCreate).click();
     cy.get(locators.createProducts.nameError).should(
       "contain",
@@ -38,10 +37,7 @@ describe("Should test at functional level", () => {
     cy.get(locators.productIndex.topShoppingCart).click();
     cy.accessBrowseProducts();
     cy.get(locators.productIndex.secondShoppingCart).click();
-    cy.get('.container > :nth-child(3)').should(
-      "contain",
-      "Total Price: $40.00"
-    );
+    cy.checkTotalPrice("40.00");
     cy.checkOut();
   });
 
@@ -49,5 +45,5 @@ describe("Should test at functional level", () => {
     cy.get(locators.productIndex.topShoppingCart).click();
     cy.removeCartItem();
     cy.checkTotalPrice("0.00");
-  })
+  });
 });
