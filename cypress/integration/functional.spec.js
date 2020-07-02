@@ -6,6 +6,8 @@ import locators from "../support/locators";
 describe("Should test at functional level", () => {
   beforeEach(() => {
     cy.login("aline@email.com", "supersecret", "Hello, Aline!");
+    cy.visit("http://localhost:3001/");
+
   });
 
   const uniqueProductName = `Cypress test product ${Math.random()}`;
@@ -25,7 +27,7 @@ describe("Should test at functional level", () => {
 
   it("should not create a product with the same name ", () => {
     cy.accessSellProductMenu();
-    cy.get(locators.createProducts.name).type(uniqueProductName);
+    cy.get(locators.createProducts.name).type("Bootcamp Life - 10 survival tips");
     cy.get(locators.createProducts.btnCreate).click();
     cy.get(locators.createProducts.nameError).should(
       "contain",
@@ -34,6 +36,7 @@ describe("Should test at functional level", () => {
   });
 
   it("should get total cart price", () => {
+    cy.accessBrowseProducts();
     cy.get(locators.productIndex.topShoppingCart).click();
     cy.accessBrowseProducts();
     cy.get(locators.productIndex.secondShoppingCart).click();
@@ -41,7 +44,8 @@ describe("Should test at functional level", () => {
     cy.checkOut();
   });
 
-  it.only("should remove item from shopping cart", () => {
+  it("should remove item from shopping cart", () => {
+    cy.accessBrowseProducts();
     cy.get(locators.productIndex.topShoppingCart).click();
     cy.removeCartItem();
     cy.checkTotalPrice("0.00");
