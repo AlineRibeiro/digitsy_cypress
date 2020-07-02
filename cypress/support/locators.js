@@ -7,7 +7,7 @@ const locators = {
   menu: {
     currentUser: ".current-user",
     sellProduct: ".right > .my-menu",
-    browseProducts: '[href="/products"]'
+    browseProducts: '[href="/products"]',
   },
   createProducts: {
     name: ":nth-child(1) > .ui > input",
@@ -20,13 +20,16 @@ const locators = {
     nameError: ":nth-child(1) > p",
   },
   productIndex: {
-    mostRecent: '.container > :nth-child(4) > :nth-child(1) > :nth-child(1)',
-    topShoppingCart: ':nth-child(1) > #product-card > .extra > .two > .row > .right > .ui',
-    secondShoppingCart: ':nth-child(2) > #product-card > .extra > .two > .row > .right > .ui'
+    mostRecent: ".container > :nth-child(4) > :nth-child(1) > :nth-child(1)",
+    topShoppingCart:
+      ":nth-child(1) > #product-card > .extra > .two > .row > .right > .ui",
+    secondShoppingCart:
+      ":nth-child(2) > #product-card > .extra > .two > .row > .right > .ui",
   },
   shoppingCart: {
-    checkout: '.positive'
-  }
+    checkout: ".positive",
+    removeItemBtn: ":nth-child(1) > :nth-child(2) > .extra > .ui",
+  },
 };
 //para topShoppingCart e secondShopingCart, eu poderia criar um shoppingCart key que retornaria uma
 //arrow function passando o xpath generico para um produto qq, e o nome do produto como argumento

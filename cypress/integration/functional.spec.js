@@ -1,5 +1,6 @@
 import "cypress-file-upload";
 import "../support/commandsProduct";
+import "../support/commandsCart"
 import locators from "../support/locators";
 
 describe("Should test at functional level", () => {
@@ -33,7 +34,7 @@ describe("Should test at functional level", () => {
     );
   });
 
-  it.only("should get total", () => {
+  it("should get total cart price", () => {
     cy.get(locators.productIndex.topShoppingCart).click();
     cy.accessBrowseProducts();
     cy.get(locators.productIndex.secondShoppingCart).click();
@@ -44,4 +45,9 @@ describe("Should test at functional level", () => {
     cy.checkOut();
   });
 
+  it.only("should remove item from shopping cart", () => {
+    cy.get(locators.productIndex.topShoppingCart).click();
+    cy.removeCartItem();
+    cy.checkTotalPrice("0.00");
+  })
 });
