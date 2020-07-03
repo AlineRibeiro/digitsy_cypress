@@ -25,6 +25,8 @@ const locators = {
       ":nth-child(1) > #product-card > .extra > .two > .row > .right > .ui",
     secondShoppingCart:
       ":nth-child(2) > #product-card > .extra > .two > .row > .right > .ui",
+    FN_XP_SHOPPING_CART_BTN: (name) =>
+      `//div[contains(text(),'${name}')]/../../../following-sibling::div//button`,
   },
   shoppingCart: {
     checkout: ".positive",
@@ -32,8 +34,5 @@ const locators = {
     totalPrice: ".container > :nth-child(3)",
   },
 };
-//para topShoppingCart e secondShopingCart, eu poderia criar um shoppingCart key que retornaria uma
-//arrow function passando o xpath generico para um produto qq, e o nome do produto como argumento
-//da funcao, assim como o prof fez no video 59 Saldo e 60 Remover Movimentacao
 
 export default locators;

@@ -7,7 +7,6 @@ describe("Should test at functional level", () => {
   beforeEach(() => {
     cy.login("aline@email.com", "supersecret", "Hello, Aline!");
     cy.visit("http://localhost:3001/");
-
   });
 
   const uniqueProductName = `Cypress test product ${Math.random()}`;
@@ -27,7 +26,9 @@ describe("Should test at functional level", () => {
 
   it("should not create a product with the same name ", () => {
     cy.accessSellProductMenu();
-    cy.get(locators.createProducts.name).type("Bootcamp Life - 10 survival tips");
+    cy.get(locators.createProducts.name).type(
+      "Bootcamp Life - 10 survival tips"
+    );
     cy.get(locators.createProducts.btnCreate).click();
     cy.get(locators.createProducts.nameError).should(
       "contain",
@@ -35,7 +36,7 @@ describe("Should test at functional level", () => {
     );
   });
 
-  it.only("should get total cart price", () => {
+  it("should get total cart price", () => {
     cy.accessBrowseProducts();
     cy.get(locators.productIndex.topShoppingCart).click();
     cy.accessBrowseProducts();
@@ -49,5 +50,16 @@ describe("Should test at functional level", () => {
     cy.get(locators.productIndex.topShoppingCart).click();
     cy.removeCartItem();
     cy.checkTotalPrice("0.00");
+  });
+
+  it.only("should use xpath to put product in shopping cart", () => {
+    cy.accessBrowseProducts();
+    cy.xpath(
+      locators.productIndex.FN_XP_SHOPPING_CART_BTN("Living the pug life")
+    ).click();
+    cy.accessBrowseProducts();
+    cy.xpath(
+      locators.productIndex.FN_XP_SHOPPING_CART_BTN("Meal Prep Hacks")
+    ).click();
   });
 });
