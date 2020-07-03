@@ -36,13 +36,15 @@ describe("Should test at functional level", () => {
     );
   });
 
-  it("should get total cart price", () => {
+  it.only("should get total cart price", () => {
     cy.accessBrowseProducts();
-    cy.get(locators.productIndex.topShoppingCart).click();
+    cy.xpath(locators.productIndex.FN_XP_SHOPPING_CART_BTN("Living the pug life")).click();
     cy.accessBrowseProducts();
-    cy.get(locators.productIndex.secondShoppingCart).click();
-    cy.checkTotalPrice("40.00");
-    cy.checkOut();
+    cy.xpath(locators.productIndex.FN_XP_SHOPPING_CART_BTN("React Hooks")).click();
+    cy.checkTotalPrice("147.41");
+    cy.removeCartItem();
+    cy.removeCartItem();
+    cy.checkTotalPrice("0.00");
   });
 
   it("should remove item from shopping cart", () => {
@@ -50,16 +52,5 @@ describe("Should test at functional level", () => {
     cy.get(locators.productIndex.topShoppingCart).click();
     cy.removeCartItem();
     cy.checkTotalPrice("0.00");
-  });
-
-  it.only("should use xpath to put product in shopping cart", () => {
-    cy.accessBrowseProducts();
-    cy.xpath(
-      locators.productIndex.FN_XP_SHOPPING_CART_BTN("Living the pug life")
-    ).click();
-    cy.accessBrowseProducts();
-    cy.xpath(
-      locators.productIndex.FN_XP_SHOPPING_CART_BTN("Meal Prep Hacks")
-    ).click();
   });
 });
