@@ -35,7 +35,7 @@ describe("Should test at functional level", () => {
     );
   });
 
-  it("should get total cart price", () => {
+  it.only("should get total cart price", () => {
     cy.accessBrowseProducts();
     cy.get(locators.productIndex.topShoppingCart).click();
     cy.accessBrowseProducts();
