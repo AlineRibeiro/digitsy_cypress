@@ -9,7 +9,9 @@ describe("Should test at functional level", () => {
     cy.visit("http://localhost:3001/");
   });
 
-  const uniqueProductName = `Cypress test product ${Math.random()}`;
+
+
+  const uniqueProductName = `Cypress test product ${(Math.random())}`;
 
   it("should insert a product", () => {
     cy.accessSellProductMenu();
@@ -24,7 +26,7 @@ describe("Should test at functional level", () => {
     );
   });
 
-  it("should not create a product with the same name ", () => {
+  it("should not create a product with existing name", () => {
     cy.accessSellProductMenu();
     cy.get(locators.createProducts.name).type(
       "Bootcamp Life - 10 survival tips"
@@ -36,7 +38,7 @@ describe("Should test at functional level", () => {
     );
   });
 
-  it.only("should get total cart price", () => {
+  it("should get total cart price", () => {
     cy.accessBrowseProducts();
     cy.xpath(
       locators.productIndex.FN_XP_SHOPPING_CART_BTN("Living the pug life")
