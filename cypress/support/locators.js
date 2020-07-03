@@ -1,8 +1,8 @@
 const locators = {
   login: {
-    user: ":nth-child(1) > .ui > input",
-    password: ":nth-child(2) > .ui > input",
-    btnLogin: ".stacked > .teal",
+    user: "[data-cy=username]",
+    password: "[data-cy=password]",
+    btnLogin: "[data-cy=login-btn]",
   },
   menu: {
     currentUser: ".current-user",

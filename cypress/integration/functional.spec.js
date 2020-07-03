@@ -52,4 +52,10 @@ describe("Should test at functional level", () => {
     cy.removeCartItem();
     cy.checkTotalPrice("0.00");
   });
+
+  it.only("...", () => {
+
+  });
+
+
 });
