@@ -5,9 +5,9 @@ const locators = {
     btnLogin: "[data-cy=login-btn]",
   },
   menu: {
-    currentUser: ".current-user",
-    sellProduct: ".right > .my-menu",
-    browseProducts: '[href="/products"]',
+    currentUser: "[data-cy=greeting]",
+    sellProduct: "[data-cy=sell-product-btn]",
+    browseProducts: "[data-cy=browse-btn]",
   },
   createProducts: {
     name: ":nth-child(1) > .ui > input",
