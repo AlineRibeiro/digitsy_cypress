@@ -10,14 +10,14 @@ const locators = {
     browseProducts: "[data-cy=browse-btn]",
   },
   createProducts: {
-    name: ":nth-child(1) > .ui > input",
-    price: ":nth-child(2) > .ui > input",
-    description: "textarea",
-    thumbnail: 'input[name="thumbnail"]',
-    sampleMedia: 'input[name="sample_media"]',
-    media: 'input[name="media"]',
-    btnCreate: ":nth-child(9) > .ui",
-    nameError: ":nth-child(1) > p",
+    name: "[data-cy=name]",
+    price: "[data-cy=price]",
+    description: "[data-cy=description]",
+    thumbnail: "[data-cy=thumbnail]",
+    sampleMedia: "[data-cy=sample-media]",
+    media: "[data-cy=media]",
+    btnCreate: "[data-cy=submit-btn]",
+    nameError: "[data-cy=error-message]"
   },
   productIndex: {
     mostRecent: ".container > :nth-child(4) > :nth-child(1) > :nth-child(1)",

@@ -49,6 +49,7 @@ describe("Should test at functional level", () => {
     ).click();
     cy.checkTotalPrice("147.41");
     cy.removeCartItem();
+    cy.wait(1000); // refactor this
     cy.removeCartItem();
     cy.checkTotalPrice("0.00");
   });
