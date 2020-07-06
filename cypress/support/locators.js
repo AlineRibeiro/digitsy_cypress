@@ -20,13 +20,14 @@ const locators = {
     nameError: "[data-cy=error-message]"
   },
   productIndex: {
-    mostRecent: ".container > :nth-child(4) > :nth-child(1) > :nth-child(1)",
-    topShoppingCart:
-      ":nth-child(1) > #product-card > .extra > .two > .row > .right > .ui",
-    secondShoppingCart:
-      ":nth-child(2) > #product-card > .extra > .two > .row > .right > .ui",
+    FN_XP_FIND_PRODUCT: (name) => `//div[contains(text(),'${name}')]`,
+    // mostRecent: ".container > :nth-child(4) > :nth-child(1) > :nth-child(1)",
+    // topShoppingCart:
+    //   ":nth-child(1) > #product-card > .extra > .two > .row > .right > .ui",
+    // secondShoppingCart:
+    //   ":nth-child(2) > #product-card > .extra > .two > .row > .right > .ui",
     FN_XP_SHOPPING_CART_BTN: (name) =>
-      `//div[contains(text(),'${name}')]/../../../following-sibling::div//button`,
+      `//div[contains(text(),'${name}')]/../../../following-sibling::div//button`
   },
   shoppingCart: {
     checkout: ".positive",

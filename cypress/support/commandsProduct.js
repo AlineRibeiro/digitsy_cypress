@@ -26,6 +26,6 @@ Cypress.Commands.add(
     cy.get(locators.createProducts.btnCreate).click();
     cy.visit("http://localhost:3001/products");
     //this should not be a visit, but a redirection. add later
-    cy.get(locators.productIndex.mostRecent).should("contain", name);
+    cy.xpath(locators.productIndex.FN_XP_FIND_PRODUCT(name)).should("contain", name);
   }
 );

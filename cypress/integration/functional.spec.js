@@ -9,11 +9,9 @@ describe("Should test at functional level", () => {
     cy.visit("http://localhost:3001/");
   });
 
+  const uniqueProductName = `Cypress test product ${Math.random()}`;
 
-
-  const uniqueProductName = `Cypress test product ${(Math.random())}`;
-
-  it("should insert a product", () => {
+  it.only("should insert a product", () => {
     cy.accessSellProductMenu();
     cy.createProduct(
       uniqueProductName,
@@ -54,9 +52,8 @@ describe("Should test at functional level", () => {
     cy.checkTotalPrice("0.00");
   });
 
-  it.only("...", () => {
-
+  it("should check if a product exists", () => {
+    cy.accessBrowseProducts();
+    cy.xpath(locators.productIndex.FN_XP_FIND_PRODUCT('Just here for the boos'));
   });
-
-
 });
