@@ -11,7 +11,7 @@ describe("Should test at functional level", () => {
 
   const uniqueProductName = `Cypress test product ${Math.random()}`;
 
-  it.only("should insert a product", () => {
+  it("should insert a product", () => {
     cy.accessSellProductMenu();
     cy.createProduct(
       uniqueProductName,
