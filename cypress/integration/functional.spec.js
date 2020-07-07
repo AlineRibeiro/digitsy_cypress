@@ -36,7 +36,7 @@ describe("Should test at functional level", () => {
     );
   });
 
-  it("should get total cart price", () => {
+  it.only("should get total cart price", () => {
     cy.accessBrowseProducts();
     cy.xpath(
       locators.productIndex.FN_XP_SHOPPING_CART_BTN("Living the pug life")
