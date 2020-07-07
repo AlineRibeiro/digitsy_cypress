@@ -17,7 +17,7 @@ const locators = {
     sampleMedia: "[data-cy=sample-media]",
     media: "[data-cy=media]",
     btnCreate: "[data-cy=submit-btn]",
-    nameError: "[data-cy=error-message]",
+    nameError: "[data-cy=error-messages]",
   },
   productIndex: {
     FN_XP_FIND_PRODUCT: (name) => `//div[contains(text(),'${name}')]`,
