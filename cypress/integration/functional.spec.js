@@ -46,11 +46,13 @@ describe("Should test at functional level", () => {
       locators.productIndex.FN_XP_SHOPPING_CART_BTN("React Hooks")
     ).click();
     cy.checkTotalPrice("147.41");
-    cy.xpath(locators.shoppingCart.FN_XP_REMOVE_ITEM_BTN('React Hooks')).click();
+    cy.xpath(
+      locators.shoppingCart.FN_XP_REMOVE_ITEM_BTN("React Hooks")
+    ).click();
     cy.checkTotalPrice("137.42");
-    cy.xpath(locators.shoppingCart.FN_XP_REMOVE_ITEM_BTN('Living the pug life')).click();
+    cy.xpath(
+      locators.shoppingCart.FN_XP_REMOVE_ITEM_BTN("Living the pug life")
+    ).click();
     cy.checkTotalPrice("0.00");
   });
-
-
 });

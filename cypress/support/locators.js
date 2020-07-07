@@ -28,8 +28,8 @@ const locators = {
     checkout: "[data-cy=checkout-btn]",
     FN_XP_REMOVE_ITEM_BTN: (name) =>
       `//a[contains(text(), '${name}')]/../following-sibling::div[2]//button`,
-    totalPrice: "[data-cy=total-price]"
-  }
+    totalPrice: "[data-cy=total-price]",
+  },
 };
 
 export default locators;
