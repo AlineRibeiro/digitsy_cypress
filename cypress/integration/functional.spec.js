@@ -46,14 +46,11 @@ describe("Should test at functional level", () => {
       locators.productIndex.FN_XP_SHOPPING_CART_BTN("React Hooks")
     ).click();
     cy.checkTotalPrice("147.41");
-    cy.removeCartItem();
-    cy.wait(1000); // refactor this
-    cy.removeCartItem();
+    cy.xpath(locators.shoppingCart.FN_XP_REMOVE_ITEM_BTN('React Hooks')).click();
+    cy.checkTotalPrice("137.42");
+    cy.xpath(locators.shoppingCart.FN_XP_REMOVE_ITEM_BTN('Living the pug life')).click();
     cy.checkTotalPrice("0.00");
   });
 
-  it("should check if a product exists", () => {
-    cy.accessBrowseProducts();
-    cy.xpath(locators.productIndex.FN_XP_FIND_PRODUCT('Just here for the boos'));
-  });
+
 });

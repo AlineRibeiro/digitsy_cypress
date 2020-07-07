@@ -25,8 +25,9 @@ const locators = {
       `//div[contains(text(),'${name}')]/../../../following-sibling::div//button`,
   },
   shoppingCart: {
-    checkout: ".positive",
-    removeItemBtn: ":nth-child(1) > :nth-child(2) > .extra > .ui",
+    checkout: "[data-cy=checkout-btn]",
+    FN_XP_REMOVE_ITEM_BTN: (name) =>
+      `//a[contains(text(), '${name}')]/../following-sibling::div[2]//button`,
     totalPrice: ".container > :nth-child(3)",
   },
 };

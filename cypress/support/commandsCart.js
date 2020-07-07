@@ -5,7 +5,7 @@ Cypress.Commands.add("checkOut", () => {
 });
 
 Cypress.Commands.add("removeCartItem", () => {
-  cy.get(locators.shoppingCart.removeItemBtn).click();
+  cy.get(locators.shoppingCart.FN_XP_REMOVE_ITEM_BTN).click();
 });
 
 Cypress.Commands.add("checkTotalPrice", (totalPrice) => {
