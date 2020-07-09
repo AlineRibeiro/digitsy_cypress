@@ -33,3 +33,16 @@ Cypress.Commands.add("login", (username, password, greeting) => {
   cy.get(locators.login.btnLogin).click();
   cy.get(locators.menu.currentUser).should("contain", greeting);
 });
+
+Cypress.Commands.add("apiLogin", (email, password) => {
+  cy.request({
+    method: "POST",
+    url: "http://localhost:3000/api/session",
+    body: {
+      email: email,
+      password: password,
+    },
+  })
+    .its("body.user.id")
+    .should("not.be.empty");
+});
