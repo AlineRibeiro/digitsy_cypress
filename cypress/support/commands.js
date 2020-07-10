@@ -37,7 +37,7 @@ Cypress.Commands.add("login", (username, password, greeting) => {
 Cypress.Commands.add("apiLogin", (email, password) => {
   cy.request({
     method: "POST",
-    url: "http://localhost:3000/api/session",
+    url: "/session",
     body: {
       email: email,
       password: password,
